@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: sap_adventure_works
+    catalog: fea_academy
+    schema: adventure_works
+    tables:
+      - name: sales_customer
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
+      - name: person_person
+      - name: sales_salesorderheader
+      - name: sales_salesorderdetail
+      - name: production_product
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not_null
