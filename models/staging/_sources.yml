@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: adventure_works
+    database: fea_academy       # O catálogo de onde o dbt vai LER
+    schema: adventure_works     # O schema onde estão as 68 tabelas restauradas
+    tables:
+      - name: sales_salesorderheader
+      - name: sales_salesorderdetail
+      - name: production_product
+      - name: sales_customer
+      - name: person_address
+      - name: person_stateprovince
+      - name: person_countryregion
+      - name: sales_salesreason
+      - name: sales_salesorderheadersalesreason
+
