@@ -1,43 +1,56 @@
-# Adventure Works Analytics - Modern Analytics Stack
+# Adventure Works Analytics - Modern Data Stack (MDS)
 
-## Projeto
-Implementação de um Data Warehouse moderno para a Adventure Works utilizando a **Modern Analytics Stack** (dbt + Databricks).
+## Project Overview
+This repository contains the complete implementation of a modern Data Warehouse for Adventure Works, a fast-growing bicycle manufacturer. The goal of this project is to transform raw transactional data into strategic data assets, turning the company into a data-driven enterprise.
 
-**Programa:** Indicium Academy
-**Desafio:** Projeto Final de Certificação em Engenharia de Analytics
-
----
-
-## Arquitetura
-
-### Camadas de Dados
-* **Bronze:** Dados brutos do PostgreSQL (Adventure Works)
-* **Silver:** Dados limpos, validados e padronizados
-* **Gold:** Tabelas dimensionais e fatos prontas para BI
-
-### Star Schema
-* **Tabela Fato:** `fct_sales`
-* **Dimensões:** 8 tabelas (Cliente, Produto, Vendedor, Tipo Cartão, Motivo Venda, Tempo, Status, Localidade)
+This project represents the Final Capstone Project for the Analytics Engineering Certification by Indicium Academy.
 
 ---
 
-## Stack Tecnológico
-* **Data Warehouse:** Databricks (Community Edition)
-* **Transformação:** dbt Cloud (Free)
-* **Versionamento:** GitHub
-* **BI:** Google Looker Studio
+## Architecture and Data Layers
+The project follows the best practices of the Modern Data Stack methodology, leveraging dbt Cloud for transformation and governance, and Databricks as the underlying cloud data platform.
+
+The pipeline is organized into distinct semantic layers:
+* Staging (Bronze): Raw transactional data from the PostgreSQL source schema (adventure_works), cleaned, type-cast, and renamed into standard English.
+* Intermediate (Silver): Complex business logic joins, bridges for many-to-many relationships, and the generation of surrogate keys.
+* Marts (Gold): Production-ready dimensional modeling structured in a Star Schema optimized for analytics and BI consumption.
 
 ---
 
-## Validação Crítica
-* ✅ **Teste do CEO:** Total de vendas brutas em 2011 = $12.646.112,16
+## Dimensional Modeling (Star Schema)
+The analytical model is optimized to answer critical business questions regarding sales performance, customer behavior, top locations, and product margins.
+
+* Fact Table: fact_sales (Granularity: Order line item level, secured by a custom Surrogate Key)
+* Dimension Tables:
+  * dim_customers: Customer profiling data.
+  * dim_products: Detailed product catalog including categories and subcategories.
+  * dim_locations: Geographic attributes (City, State, Country) for shipping analysis.
+  * dim_credit_cards: Credit card payment types used in transactions.
+  * dim_reasons and bridge_sales_reason: Mapping of multi-option purchase motivators.
+  * dim_dates: Custom time series calendar for advanced time-intelligence metrics.
 
 ---
 
-## 👤 Autor
-* **Sueli da Hora Moreira**
+## Tech Stack
+* Data Warehouse / Compute: Databricks (Free Edition)
+* Data Transformation: dbt Cloud
+* Version Control: GitHub
+* Business Intelligence (BI): Power BI (Interactive Self-Service Dashboards)
 
 ---
 
-## 📄 Licença
-MIT License
+## Critical Financial Validation
+To satisfy the audit requirements from the executive board, a specific dbt data test was implemented to validate the data warehouse's mathematical accuracy.
+
+* CEO Audit Criteria: Total gross sales for the year 2011 must equal exactly $12,646,112.16.
+* Status: Passed. Data integrity verified against the internal accounting audit reports.
+
+---
+
+## Author
+* Sueli da Hora Moreira - Trainee Analytics Engineer
+
+---
+
+## License
+This project is licensed under the MIT License.
