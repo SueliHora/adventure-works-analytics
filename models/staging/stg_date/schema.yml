@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_calendar
+    description: "Staging model that automatically generates the base date series for the project."
+    columns:
+      - name: date_day
+        description: "The date primary key used to connect with the fact table."
+        tests:
+          - unique
+          - not_null

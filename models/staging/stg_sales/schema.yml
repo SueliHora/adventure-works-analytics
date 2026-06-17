@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: stg_sales_orderheader
+    description: "Staging table for sales order headers containing general order details."
+    columns:
+      - name: pk_sales_order
+        description: "Primary key for each sales order."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_orderdetail
+    description: "Staging table for sales order details, line by line per product."
+
+  - name: stg_sales_customer
+    description: "Staging table for customer master records."
+    columns:
+      - name: pk_customer
+        description: "Primary key for the customer."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_creditcard
+    description: "Staging table for credit card types used in transactions."
+    columns:
+      - name: pk_credit_card
+        description: "Primary key for the credit card."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_store
+    description: "Staging table for business/store customers (B2B)."
+    columns:
+      - name: pk_store
+        description: "Primary key representing the store business entity ID."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_sales_salesreason
+    description: "Staging table for the descriptions of sales reasons."
+
+  - name: stg_sales_orderheadersalesreason
+    description: "Staging table mapping sales orders to their corresponding sales reasons."
+          

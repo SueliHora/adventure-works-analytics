@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: stg_person_person
+    description: "Staging table for individual customers, employee details, and store contacts."
+    columns:
+      - name: pk_person
+        description: "The primary key representing the business entity ID of the person."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_person_address
+    description: "Staging table for physical addresses."
+    columns:
+      - name: pk_address
+        description: "The primary key for the address table."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_person_stateprovince
+    description: "Staging table for state and province mapping."
+    columns:
+      - name: pk_state_province
+        description: "The primary key for the state province table."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_person_countryregion
+    description: "Staging table for country and region codes."
+    columns:
+      - name: pk_country_region
+        description: "The primary key for the country region table."
+        tests:
+          - unique
+          - not_null

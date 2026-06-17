@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_production_product
+    description: "Staging table for production products."
+    columns:
+      - name: pk_product
+        description: "The primary key for the product table."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_production_productsubcategory
+    description: "Staging table for product subcategories."
+    columns:
+      - name: pk_product_subcategory
+        description: "The primary key for the product subcategory table."
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_production_productcategory
+    description: "Staging table for product categories."
+    columns:
+      - name: pk_product_category
+        description: "The primary key for the product category table."
+        tests:
+          - unique
+          - not_null
