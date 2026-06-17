@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_sales_order_items
+    description: "Intermediate table that joins sales order headers and details to establish the item-level grain."
+    columns:
+      - name: sk_sales_order_item
+        description: "Surrogate key generated via MD5 to uniquely identify each item line in an order."
+        tests:
+          - unique
+          - not_null

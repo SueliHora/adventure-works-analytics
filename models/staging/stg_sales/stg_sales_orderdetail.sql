@@ -15,8 +15,8 @@ with
 
             -- METRICS
             cast(orderqty as int) as order_quantity,
-            cast(unitprice as decimal(18,2)) as unit_price,
-            cast(unitpricediscount as decimal(18,2)) as unit_price_discount
+            cast(unitprice as decimal(18,4)) as unit_price, -- Alterado para 4 casas
+            cast(unitpricediscount as decimal(18,4)) as unit_price_discount -- Alterado para 4 casas
             
         from source_data
     )
