@@ -1,44 +1,43 @@
 with
-    -- 1. Importação da fonte bruta
-    fonte_produtos as (
+    -- 1. Import source data
+    source_data as (
         select *
         from {{ source('adventure_works', 'production_product') }}
     ),
 
-    -- 2. Limpeza, Renomeação e Tipagem
-    logica_limpeza as (
+    -- 2. Clean, Rename and Cast
+    cleansed_data as (
         select
-            -- CHAVE PRIMÁRIA (Identificada com pk_)
-            cast(productid as int) as pk_produto,
+            -- PRIMARY KEY
+            cast(productid as int) as pk_product,
             
-            -- CHAVES ESTRANGEIROS (Identificadas com fk_)
-            -- Exemplo de chaves comuns na tabela de produtos para categorização
-            cast(productsubcategoryid as int) as fk_subcategoria,
-            cast(productmodelid as int) as fk_modelo,
+            -- FOREIGN KEYS
+            cast(productsubcategoryid as int) as fk_subcategory,
+            cast(productmodelid as int) as fk_model,
             
-            -- Strings padronizadas e limpas
-            cast(name as string) as nome_produto,
-            cast(productnumber as string) as codigo_produto,
+            -- STRINGS
+            cast(name as string) as product_name,
+            cast(productnumber as string) as product_number,
             
-            -- Flags/Booleanos
-            makeflag as is_produto_fabricado,
-            finishedgoodsflag as is_produto_finalizado,
+            -- FLAGS / BOOLEANS
+            makeflag as is_manufactured,
+            finishedgoodsflag as is_finished_good,
             
-            -- Tratamento de nulos básico
-            coalesce(color, 'Não Informado') as cor_produto,
-            cast(safetystocklevel as int) as nivel_estoque_seguranca,
+            -- ATTRIBUTES & NULL HANDLING
+            coalesce(color, 'Not Specified') as color,
+            cast(safetystocklevel as int) as safety_stock_level,
             
-            -- Valores numéricos/decimais
-            cast(standardcost as decimal(10,2)) as custo_padrao,
-            cast(listprice as decimal(10,2)) as preco_listado,
+            -- METRICS
+            cast(standardcost as decimal(10,2)) as standard_cost,
+            cast(listprice as decimal(10,2)) as list_price,
             
-            -- Datas
-            cast(sellstartdate as date) as data_inicio_venda,
-            cast(sellenddate as date) as data_fim_venda
+            -- DATES
+            cast(sellstartdate as date) as sell_start_date,
+            cast(sellenddate as date) as sell_end_date
 
-        from fonte_produtos
+        from source_data
     )
 
--- 3. Select final de entrega
+-- 3. Final select
 select *
-from logica_limpeza
+from cleansed_data
