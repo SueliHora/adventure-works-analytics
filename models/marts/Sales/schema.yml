@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: "Fact table containing all sales order line items, consolidated financial metrics, and keys to connect with dimensions."
+    columns:
+      - name: sk_sales_order_item
+        description: "Unique surrogate key identifying each line item in a sales order."
+        tests:
+          - unique
+          - not_null
