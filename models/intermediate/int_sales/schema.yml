@@ -9,3 +9,12 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: int_customers_compiled
+    description: "Intermediate model that unifies individual customers (B2C) and store customers (B2B), handling name conditionals and standardizing customer types."
+    columns:
+      - name: customer_id
+        description: "The unique primary key for each customer."
+        tests:
+          - unique
+          - not_null
