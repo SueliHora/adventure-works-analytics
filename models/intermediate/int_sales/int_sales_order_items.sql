@@ -1,12 +1,10 @@
 with
     header as (
-        select * 
-        from {{ ref('stg_sales_orderheader') }}
+        select * from {{ ref('stg_sales_orderheader') }}
     ),
     
     detail as (
-        select * 
-        from {{ ref('stg_sales_orderdetail') }}
+        select * from {{ ref('stg_sales_orderdetail') }}
     ),
     
     joined_items as (
@@ -21,8 +19,9 @@ with
             -- Foreign and Natural Keys
             detail.fk_sales_order as sales_order_id,
             detail.pk_sales_order_detail as sales_order_detail_id,
-            header.fk_customer as customer_id, -- Adjusted to match your fk_ pattern
+            header.fk_customer as customer_id,
             detail.fk_product as product_id,
+            header.fk_ship_address as address_id,
             
             -- Context Attributes
             header.order_date,
@@ -40,5 +39,4 @@ with
         inner join header on detail.fk_sales_order = header.pk_sales_order
     )
 
-select * 
-from joined_items
+select * from joined_items

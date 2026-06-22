@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_locations
+    description: "Dimension model for locations, containing consolidated address, city, state, and country information."
+    columns:
+      - name: address_id
+        description: "The unique primary key for the location."
+        tests:
+          - unique
+          - not_null
+      - name: city
+        description: "The name of the city."
+      - name: state_province_name
+        description: "The name of the state or province."
+      - name: country_region_name
+        description: "The name of the country or region."

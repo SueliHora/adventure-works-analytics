@@ -10,6 +10,7 @@ select
 
     -- Foreign and Natural Keys
     sales_order_id,
+    address_id,
     sales_order_detail_id,
     customer_id,
     product_id,
