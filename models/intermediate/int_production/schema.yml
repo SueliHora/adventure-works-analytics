@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_products_enriched
+    description: "Intermediate model that enriches the product data with subcategory and category names."
+    columns:
+      - name: pk_product
+        description: "The primary key of the product table."
+        tests:
+          - unique
+          - not_null
