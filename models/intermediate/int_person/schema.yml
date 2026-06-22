@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_locations_joined
+    description: "Intermediate model joining address, state, and country information to provide a consolidated geographical view."
+    columns:
+      - name: pk_address
+        description: "Primary key of the address."
+        tests:
+          - unique
+          - not_null
+      - name: address_line_1
+        description: "First line of the address."
+      - name: address_line_2
+        description: "Second line of the address."
+      - name: city
+        description: "City name."
+      - name: postal_code
+        description: "Postal code."
+      - name: state_province_name
+        description: "Name of the state or province."
+      - name: country_region_name
+        description: "Name of the country or region."
