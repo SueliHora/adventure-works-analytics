@@ -18,3 +18,12 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: dim_products
+    description: "Dimension model for products, containing enriched category and subcategory details."
+    columns:
+      - name: pk_product
+        description: "The unique primary key for each product."
+        tests:
+          - unique
+          - not_null
