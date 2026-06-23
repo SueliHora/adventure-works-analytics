@@ -19,3 +19,24 @@ models:
           - unique
           - not_null
 
+  - name: dim_reasons
+    description: "Dimension model containing available sales reasons."
+    columns:
+      - name: pk_sales_reason
+        description: "Primary key for sales reason."
+        tests:
+          - unique
+          - not_null
+
+  - name: bridge_sales_reason
+    description: "Bridge model linking sales orders to sales reasons, resolving the many-to-many relationship."
+    columns:
+      - name: sales_order_id
+        description: "Foreign key referencing the sales order."
+        tests:
+          - not_null
+      - name: sales_reason_id
+        description: "Foreign key referencing the sales reason."
+        tests:
+          - not_null
+
