@@ -18,3 +18,15 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: int_sales_reasons_bridge
+    description: "Intermediate bridge model that resolves the many-to-many relationship between sales orders and sales reasons."
+    columns:
+      - name: sales_order_id
+        description: "The foreign key referencing the sales order."
+        tests:
+          - not_null
+      - name: sales_reason_id
+        description: "The foreign key referencing the sales reason."
+        tests:
+          - not_null
