@@ -2,19 +2,37 @@ version: 2
 
 models:
   - name: int_sales_order_items
-    description: "Intermediate table that joins sales order headers and details to establish the item-level grain."
+    description: "Intermediate table that joins sales order headers and details to establish the item-level grain and pre-calculate financial metrics."
     columns:
       - name: sk_sales_order_item
         description: "Surrogate key generated via MD5 to uniquely identify each item line in an order."
         tests:
           - unique
           - not_null
+      - name: gross_revenue
+        description: "Pre-calculated gross revenue (quantity * unit price) formatted to 4 decimal places for precision."
+      - name: net_revenue
+        description: "Pre-calculated net revenue after applying product discounts."
 
   - name: int_customers_compiled
     description: "Intermediate model that unifies individual customers (B2C) and store customers (B2B), handling name conditionals and standardizing customer types."
     columns:
-      - name: customer_id
+      - name: pk_customer
         description: "The unique primary key for each customer."
         tests:
           - unique
+          - not_null
+      - name: customer_name
+        description: "Compiled full name of the individual or the store name."
+
+  - name: int_sales_reasons_bridge
+    description: "Intermediate bridge model that resolves the many-to-many relationship between sales orders and sales reasons."
+    columns:
+      - name: fk_sales_order
+        description: "The foreign key referencing the sales order."
+        tests:
+          - not_null
+      - name: fk_sales_reason
+        description: "The foreign key referencing the sales reason."
+        tests:
           - not_null

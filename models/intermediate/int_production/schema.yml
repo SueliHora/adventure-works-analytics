@@ -2,10 +2,18 @@ version: 2
 
 models:
   - name: int_products_enriched
-    description: "Intermediate model that enriches the product data with subcategory and category names."
+    description: "Intermediate model that enriches the base product data by joining its corresponding subcategory and category names."
     columns:
       - name: pk_product
-        description: "The primary key of the product table."
+        description: "The unique primary key identifying each product."
         tests:
           - unique
           - not_null
+      - name: product_name
+        description: "The commercial name of the product."
+      - name: product_subcategory
+        description: "The specific subcategory name the product belongs to."
+      - name: product_category
+        description: "The macro category name of the product."
+      - name: list_price
+        description: "The established list price for the product item."

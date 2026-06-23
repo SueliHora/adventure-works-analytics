@@ -1,11 +1,22 @@
 version: 2
-
 models:
   - name: dim_products
-    description: "Dimension model for products, containing enriched category and subcategory details."
+    description: "Final dimension model for products, containing enriched category and subcategory details for BI consumption."
     columns:
-      - name: pk_product
+      - name: product_id
         description: "The unique primary key for each product."
         tests:
           - unique
           - not_null
+      - name: product_name
+        description: "The commercial name of the product."
+      - name: product_number
+        description: "The unique identification number or SKU of the product."
+      - name: product_subcategory
+        description: "The specific subcategory name the product belongs to."
+      - name: product_category
+        description: "The macro category name of the product."
+      - name: color
+        description: "The color of the product."
+      - name: list_price
+        description: "The catalog list price of the product formatted to 4 decimal places."
