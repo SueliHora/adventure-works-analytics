@@ -16,12 +16,13 @@ with
                 coalesce(cast(detail.pk_sales_order_detail as string), '')
             ) as string)) as sk_sales_order_item,
             
-            -- Foreign and Natural Keys
-            detail.fk_sales_order as sales_order_id,
-            detail.pk_sales_order_detail as sales_order_detail_id,
-            header.fk_customer as customer_id,
-            detail.fk_product as product_id,
-            header.fk_ship_address as address_id,
+            -- Foreign and Natural Keys (Keeping staging names)
+            detail.fk_sales_order,
+            detail.pk_sales_order_detail,
+            header.fk_customer,
+            detail.fk_product,
+            header.fk_ship_address,
+            header.fk_credit_card, -- ADICIONADO PARA O BI
             
             -- Context Attributes
             header.order_date,
@@ -30,13 +31,12 @@ with
             detail.unit_price,
             detail.unit_price_discount,
             
-            -- Business Logic (Financial Metrics)
-            (detail.order_quantity * detail.unit_price) as gross_revenue,
-            (detail.order_quantity * detail.unit_price * detail.unit_price_discount) as discount_amount,
-            ((detail.order_quantity * detail.unit_price) - (detail.order_quantity * detail.unit_price * detail.unit_price_discount)) as net_revenue
+            -- Business Logic (Financial Metrics with forced precision)
+            cast((detail.order_quantity * detail.unit_price) as decimal(18,4)) as gross_revenue,
+            cast((detail.order_quantity * detail.unit_price * detail.unit_price_discount) as decimal(18,4)) as discount_amount,
+            cast(((detail.order_quantity * detail.unit_price) - (detail.order_quantity * detail.unit_price * detail.unit_price_discount)) as decimal(18,4)) as net_revenue
             
         from detail
         inner join header on detail.fk_sales_order = header.pk_sales_order
     )
-
 select * from joined_items

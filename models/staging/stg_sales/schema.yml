@@ -2,28 +2,34 @@ version: 2
 
 models:
   - name: stg_sales_orderheader
-    description: "Staging table for sales order headers containing general order details."
+    description: "Staging table for sales order headers, standardizing status and macro financial values."
     columns:
       - name: pk_sales_order
-        description: "Primary key for each sales order."
+        description: "Primary key that uniquely identifies each sales order."
         tests:
           - unique
           - not_null
 
   - name: stg_sales_orderdetail
-    description: "Staging table for sales order details, line by line per product."
+    description: "Staging table for sales order details, breaking down information line by line per product."
+    columns:
+      - name: pk_sales_order_detail
+        description: "Primary key that uniquely identifies each line item of an order."
+        tests:
+          - unique
+          - not_null
 
   - name: stg_sales_customer
-    description: "Staging table for customer master records."
+    description: "Staging table containing customer records and their relationship keys with stores and territories."
     columns:
       - name: pk_customer
-        description: "Primary key for the customer."
+        description: "Primary key for the customer record."
         tests:
           - unique
           - not_null
 
   - name: stg_sales_creditcard
-    description: "Staging table for credit card types used in transactions."
+    description: "Staging table for the types of credit cards used in sales."
     columns:
       - name: pk_credit_card
         description: "Primary key for the credit card."
@@ -32,17 +38,29 @@ models:
           - not_null
 
   - name: stg_sales_store
-    description: "Staging table for business/store customers (B2B)."
+    description: "Staging table containing the registration information of physical stores (B2B customers)."
     columns:
       - name: pk_store
-        description: "Primary key representing the store business entity ID."
+        description: "Primary key representing the store's business entity."
         tests:
           - unique
           - not_null
 
   - name: stg_sales_salesreason
-    description: "Staging table for the descriptions of sales reasons."
+    description: "Staging table with textual descriptions and categories of sales reasons."
+    columns:
+      - name: pk_sales_reason
+        description: "Primary key for the sales reason."
+        tests:
+          - unique
+          - not_null
 
   - name: stg_sales_orderheadersalesreason
-    description: "Staging table mapping sales orders to their corresponding sales reasons."
+    description: "Staging table performing the many-to-many mapping between orders and sales reasons."
+    columns:
+      - name: pk_sales_order_sales_reason
+        description: "Surrogate primary key generated from the concatenation of fk_sales_order and fk_sales_reason."
+        tests:
+          - unique
+          - not_null
           

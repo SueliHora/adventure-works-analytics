@@ -1,4 +1,4 @@
--- Este teste falha se encontrarmos alguma cidade com nome vazio ou apenas espaços
+-- This test fails if any city name is empty or consists only of spaces
 select
     address_id
 from {{ ref('dim_locations') }}

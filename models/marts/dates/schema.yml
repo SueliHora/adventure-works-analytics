@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_dates
+    description: "Dimension model for calendar dates, providing hierarchy for time series analysis (year, month, quarter)."
+    columns:
+      - name: date_id
+        description: "The primary key for the date dimension, formatted as a date type for BI integration."
+        tests:
+          - unique
+          - not_null
+      - name: calendar_year
+        description: "The calendar year of the date."
+      - name: month_name
+        description: "The full name of the month."

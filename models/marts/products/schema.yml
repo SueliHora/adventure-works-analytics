@@ -1,10 +1,9 @@
 version: 2
-
 models:
   - name: dim_products
     description: "Dimension model for products, containing enriched category and subcategory details."
     columns:
-      - name: pk_product
+      - name: product_id
         description: "The unique primary key for each product."
         tests:
           - unique
