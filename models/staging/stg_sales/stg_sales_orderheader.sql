@@ -12,7 +12,7 @@ with
             -- FOREIGN KEYS
             cast(customerid as int) as fk_customer,
             cast(creditcardid as int) as fk_credit_card,
-            cast(shiptoaddressid as int) as fk_ship_address, -- Corrigido para corresponder ao banco
+            cast(shiptoaddressid as int) as fk_ship_address, -- Adjusted to match database schema
 
             -- DATES
             cast(orderdate as timestamp) as order_date,

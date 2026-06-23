@@ -22,7 +22,7 @@ with
             header.fk_customer,
             detail.fk_product,
             header.fk_ship_address,
-            header.fk_credit_card, -- ADICIONADO PARA O BI
+            header.fk_credit_card, -- ADDED FOR BI CONSUMPTION
             
             -- Context Attributes
             header.order_date,

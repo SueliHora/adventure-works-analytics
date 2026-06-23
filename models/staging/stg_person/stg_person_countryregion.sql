@@ -13,6 +13,7 @@ with
             cast(name as string) as country_region_name
 
         from source_data
+        -- Filter to ensure data quality and avoid nulls/empty keys
         where countryregioncode is not null
             and trim(countryregioncode) != ''
     )

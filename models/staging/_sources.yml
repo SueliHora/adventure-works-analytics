@@ -1,110 +1,105 @@
 version: 2
-
 sources:
   - name: adventure_works
-    description: "Raw relational database of the Adventure Works ERP, extracted directly to the data platform."
+    description: "Raw relational database of the Adventure Works ERP."
     database: fea_academy
     schema: adventure_works
     tables:
       - name: sales_salesorderheader
-        description: "Raw header data for sales orders, containing status, dates, and customer keys."
+        description: "Raw header data for sales orders."
         columns:
           - name: salesorderid
             tests:
               - unique
               - not_null
-
       - name: sales_salesorderdetail
-        description: "Line item details for sales orders, containing quantities, prices, and product keys."
+        description: "Line item details for sales orders."
         columns:
           - name: salesorderdetailid
             tests:
               - unique
               - not_null
-
       - name: sales_customer
-        description: "Raw customer master record, linking people, stores (B2B), and territories."
+        description: "Raw customer master record."
         columns:
           - name: customerid
             tests:
               - unique
               - not_null
-
       - name: sales_salesreason
-        description: "Lookup table with descriptive reasons associated with sales."
+        description: "Lookup table with descriptive reasons."
         columns:
           - name: salesreasonid
             tests:
               - unique
               - not_null
-
       - name: sales_salesorderheadersalesreason
-        description: "Bridge table (many-to-many) associating each sales order with its respective reasons."
-
+        description: "Bridge table (many-to-many) associating orders with reasons."
+        columns:
+          - name: salesorderid
+            tests:
+              - not_null
+          - name: salesreasonid
+            tests:
+              - not_null
       - name: person_address
-        description: "Raw physical address data, including cities, postal codes, and state keys."
+        description: "Raw physical address data."
         columns:
           - name: addressid
             tests:
               - unique
               - not_null
-
       - name: person_stateprovince
-        description: "State and province records linked to region/country codes."
+        description: "State and province records."
         columns:
           - name: stateprovinceid
             tests:
               - unique
               - not_null
-
       - name: person_countryregion
-        description: "Lookup table containing the names and codes of countries and regions."
+        description: "Lookup table for countries."
         columns:
           - name: countryregioncode
-
+            tests:
+              - unique
 
       - name: production_product
-        description: "Master product record, containing costs, list prices, and subcategories."
+        description: "Master product record."
         columns:
           - name: productid
             tests:
               - unique
               - not_null
-
       - name: sales_creditcard
-        description: "Raw information on credit cards used in financial transactions."
+        description: "Raw credit card info."
         columns:
           - name: creditcardid
             tests:
               - unique
               - not_null
-
       - name: sales_store
-        description: "Registration information for physical stores and corporate customers (B2B segment)."
+        description: "Physical store records."
         columns:
           - name: businessentityid
             tests:
               - unique
               - not_null
-
       - name: person_person
-        description: "Registration data for individuals (individual customers, employees, and store contacts)."
+        description: "Individual registration data."
         columns:
           - name: businessentityid
             tests:
               - unique
               - not_null
-
       - name: production_productsubcategory
-        description: "Product subcategories linking items to main categories."
+        description: "Product subcategories."
         columns:
           - name: productsubcategoryid
             tests:
               - unique
               - not_null
-
       - name: production_productcategory
-        description: "Macro-level categories of the organization's products."
+        description: "Macro-level product categories."
         columns:
           - name: productcategoryid
             tests:
