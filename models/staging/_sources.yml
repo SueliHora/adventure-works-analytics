@@ -1,4 +1,5 @@
 version: 2
+
 sources:
   - name: adventure_works
     description: "Raw relational database of the Adventure Works ERP."
@@ -9,6 +10,7 @@ sources:
         description: "Raw header data for sales orders."
         columns:
           - name: salesorderid
+            description: "Unique identifier for the sales order."
             tests:
               - unique
               - not_null
@@ -16,6 +18,7 @@ sources:
         description: "Line item details for sales orders."
         columns:
           - name: salesorderdetailid
+            description: "Unique identifier for the sales order detail line."
             tests:
               - unique
               - not_null
@@ -23,6 +26,7 @@ sources:
         description: "Raw customer master record."
         columns:
           - name: customerid
+            description: "Unique identifier for the customer."
             tests:
               - unique
               - not_null
@@ -30,6 +34,7 @@ sources:
         description: "Lookup table with descriptive reasons."
         columns:
           - name: salesreasonid
+            description: "Unique identifier for the sales reason."
             tests:
               - unique
               - not_null
@@ -37,15 +42,18 @@ sources:
         description: "Bridge table (many-to-many) associating orders with reasons."
         columns:
           - name: salesorderid
+            description: "Identifier referencing the sales order."
             tests:
               - not_null
           - name: salesreasonid
+            description: "Identifier referencing the sales reason."
             tests:
               - not_null
       - name: person_address
         description: "Raw physical address data."
         columns:
           - name: addressid
+            description: "Unique identifier for the physical address."
             tests:
               - unique
               - not_null
@@ -53,6 +61,7 @@ sources:
         description: "State and province records."
         columns:
           - name: stateprovinceid
+            description: "Unique identifier for the state or province."
             tests:
               - unique
               - not_null
@@ -60,13 +69,14 @@ sources:
         description: "Lookup table for countries."
         columns:
           - name: countryregioncode
+            description: "Unique identifier for the country or region."
             tests:
               - unique
-
       - name: production_product
         description: "Master product record."
         columns:
           - name: productid
+            description: "Unique identifier for the product."
             tests:
               - unique
               - not_null
@@ -74,6 +84,7 @@ sources:
         description: "Raw credit card info."
         columns:
           - name: creditcardid
+            description: "Unique identifier for the credit card."
             tests:
               - unique
               - not_null
@@ -81,6 +92,7 @@ sources:
         description: "Physical store records."
         columns:
           - name: businessentityid
+            description: "Unique identifier representing the store's business entity."
             tests:
               - unique
               - not_null
@@ -88,6 +100,7 @@ sources:
         description: "Individual registration data."
         columns:
           - name: businessentityid
+            description: "Unique identifier representing the individual's business entity."
             tests:
               - unique
               - not_null
@@ -95,6 +108,7 @@ sources:
         description: "Product subcategories."
         columns:
           - name: productsubcategoryid
+            description: "Unique identifier for the product subcategory."
             tests:
               - unique
               - not_null
@@ -102,6 +116,7 @@ sources:
         description: "Macro-level product categories."
         columns:
           - name: productcategoryid
+            description: "Unique identifier for the product category."
             tests:
               - unique
               - not_null
