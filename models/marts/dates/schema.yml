@@ -9,7 +9,17 @@ models:
         tests:
           - unique
           - not_null
-      - name: calendar_year
-        description: "The calendar year of the date."
+      - name: day_of_month
+        description: "The day of the month (1-31)."
+      - name: month_number
+        description: "The numeric representation of the month (1-12)."
       - name: month_name
         description: "The full name of the month."
+      - name: calendar_year
+        description: "The calendar year of the date."
+      - name: calendar_quarter
+        description: "The calendar quarter (1-4)."
+      - name: day_of_week
+        description: "The numeric representation of the day of the week."
+      - name: is_weekend
+        description: "Boolean flag indicating if the date falls on a weekend (true/false)."
