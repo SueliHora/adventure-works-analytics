@@ -12,7 +12,8 @@ select
     pk_sales_order_detail as sales_order_detail_id,
     fk_customer as customer_id,
     fk_product as product_id,
-    fk_credit_card as credit_card_id, -- ADDED FOR BI
+    -- Map NULL values to -1 to align with the 'Cash/No Card' row in dim_creditcards
+    coalesce(fk_credit_card, -1) as credit_card_id,
     order_date,
     -- Attributes
     order_status,

@@ -36,3 +36,16 @@ models:
         description: "The foreign key referencing the sales reason."
         tests:
           - not_null
+
+  - name: int_creditcards
+    description: "Intermediate model that standardizes credit card types by replacing null values with 'Not Specified' and handling 'no-card' payments."
+    columns:
+      - name: pk_credit_card
+        description: "Unique identifier for the credit card."
+        tests:
+          - unique
+          - not_null
+      - name: card_type
+        description: "The type of credit card, with nulls standardized to 'Not Specified' and non-card payments labeled as 'Cash/No Card'."
+        tests:
+          - not_null
