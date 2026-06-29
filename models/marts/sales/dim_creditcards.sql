@@ -5,6 +5,6 @@ final as (
     select
         pk_credit_card as credit_card_id,
         card_type
-    from staging
+    from {{ ref('int_creditcards') }}
 )
 select * from final
