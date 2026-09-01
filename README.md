@@ -11,7 +11,8 @@
 </p>
 
 ## 📌 Executive Summary & Business Context
-This repository contains the end-to-end implementation of an enterprise-grade Analytics Engineering pipeline and Data Warehouse for **Adventure Works**, a global bicycle manufacturer and retailer. 
+
+This repository contains the end-to-end implementation of an enterprise-grade Analytics Engineering pipeline and Data Warehouse for **Adventure Works**, a global bicycle manufacturer and retailer.
 
 Developed as the **Final Capstone Project for the Analytics Engineering Certification by Indicium AI Academy**, this project bridges transactional ERP/sales data and executive decision-making, providing robust data governance, dimensional modeling, automated testing, and interactive business intelligence.
 
@@ -73,10 +74,12 @@ graph TD
 
 The analytical marts are organized around business processes to enable fast query execution and intuitive self-service BI:
 
-### Fact Table:
+### Fact Table
+
 - **`fact_sales`**: Line-item grain containing sales volume, unit prices, discounts, gross/net revenue, freight allocation, and order tax.
 
-### Dimension Tables:
+### Dimension Tables
+
 - **`dim_customers`**: Unified customer entity joining individual persons and store demographics.
 - **`dim_products`**: Normalized product attributes with hierarchical categorization.
 - **`dim_locations`**: Geospatial hierarchy (City, State/Province, Country/Region).
@@ -184,8 +187,8 @@ dbt docs serve
 
 ## 👤 Author
 
-- **Sueli da Hora Moreira** — Analytics Engineer
-- Certified Analytics Engineer by **Indicium AI Academy** (Capstone Project)
+* **Sueli da Hora Moreira** — Analytics Engineer
+- Certified Analytics Engineer by **Indicium AI Academy** • [📄 View Official Certificate (PDF)](docs/certificate.pdf) `Verification ID: 6a4fc847ce9223ca6704e246`
 
 ---
 

@@ -183,9 +183,8 @@ dbt docs serve
 ---
 
 ## 👤 Autora
-
-- **Sueli da Hora Moreira** — Analytics Engineer
-- Certified Analytics Engineer pela **Indicium AI Academy** (Projeto Capstone)
+* **Sueli da Hora Moreira** — Analytics Engineer
+* Certificação Analytics Engineer pela **Indicium AI Academy** • [📄 Ver Certificado Oficial (PDF)](docs/certificate.pdf) `ID de Verificação: 6a4fc847ce9223ca6704e246`
 
 ---
 

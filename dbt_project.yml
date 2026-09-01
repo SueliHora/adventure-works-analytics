@@ -1,12 +1,9 @@
-# Name your project!
 name: 'adventure_works_analytics'
 version: '1.0.0'
 config-version: 2
 
-# Profile configuration for dbt connection
 profile: 'adventure_works_analytics'
 
-# These configurations specify where dbt should look for different types of files.
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -14,12 +11,10 @@ seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
-target-path: "target"
 clean-targets:
   - "target"
   - "dbt_packages"
 
-# Configuring models
 models:
   adventure_works_analytics:
     staging:
