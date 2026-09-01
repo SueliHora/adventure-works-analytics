@@ -1,21 +1,14 @@
 # 🚵 Adventure Works Analytics • Modern Data Stack (MDS)
 
 <p align="center">
-  <a href="https://github.com/SueliHora/adventure-works-analytics/actions">
-    <img src="https://img.shields.io/badge/CI-Passing-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI Status" />
-  </a>
+  <img src="https://img.shields.io/badge/CI-Passing-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI" />
   <img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white" alt="dbt" />
   <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=Databricks&logoColor=white" alt="Databricks" />
   <a href="https://app.powerbi.com/view?r=eyJrIjoiNjA3YzNmZGYtNmM0NC00MzI3LWFmNTItNWUzOTZhODU3OWZlIiwidCI6IjNhZGQxZmM5LWI5NzYtNGQyYy04OTNiLTI4Y2NmMjMwMjEwMyJ9" target="_blank">
     <img src="https://img.shields.io/badge/Power_BI-Live_Dashboard-F2C811?style=for-the-badge&logo=Power-BI&logoColor=black" alt="Live Power BI" />
   </a>
   <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="SQL" />
-  <a href="https://mycourse.app/gCgrzWpkwELkbSkxz" target="_blank">
-    <img src="https://img.shields.io/badge/Indicium_Academy-Verified_Credential-00C7B7?style=for-the-badge" alt="Verified Credential" />
-  </a>
 </p>
-
-> 📊 **Live Interactive Dashboard:** [Explore the Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiNjA3YzNmZGYtNmM0NC00MzI3LWFmNTItNWUzOTZhODU3OWZlIiwidCI6IjNhZGQxZmM5LWI5NzYtNGQyYy04OTNiLTI4Y2NmMjMwMjEwMyJ9) | 📜 **Official Certification:** [View Verified Credential](https://mycourse.app/gCgrzWpkwELkbSkxz)
 
 ## 📌 Executive Summary & Business Context
 This repository contains the end-to-end implementation of an enterprise-grade Analytics Engineering pipeline and Data Warehouse for **Adventure Works**, a global bicycle manufacturer and retailer. 
@@ -191,8 +184,8 @@ dbt docs serve
 
 ## 👤 Author
 
-**Sueli da Hora Moreira** — *Analytics Engineer*  
-Capstone Project for the **Indicium AI Academy Certification**.
+- **Sueli da Hora Moreira** — Analytics Engineer
+- Certified Analytics Engineer by **Indicium AI Academy** (Capstone Project)
 
 ---
 

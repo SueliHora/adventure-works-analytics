@@ -1,21 +1,14 @@
 # 🚵 Adventure Works Analytics • Modern Data Stack (MDS)
 
 <p align="center">
-  <a href="https://github.com/SueliHora/adventure-works-analytics/actions">
-    <img src="https://img.shields.io/badge/CI-Passing-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI Status" />
-  </a>
+  <img src="https://img.shields.io/badge/CI-Passing-2ea44f?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI" />
   <img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white" alt="dbt" />
   <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=Databricks&logoColor=white" alt="Databricks" />
   <a href="https://app.powerbi.com/view?r=eyJrIjoiNjA3YzNmZGYtNmM0NC00MzI3LWFmNTItNWUzOTZhODU3OWZlIiwidCI6IjNhZGQxZmM5LWI5NzYtNGQyYy04OTNiLTI4Y2NmMjMwMjEwMyJ9" target="_blank">
     <img src="https://img.shields.io/badge/Power_BI-Live_Dashboard-F2C811?style=for-the-badge&logo=Power-BI&logoColor=black" alt="Live Power BI" />
   </a>
   <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=PostgreSQL&logoColor=white" alt="SQL" />
-  <a href="https://mycourse.app/gCgrzWpkwELkbSkxz" target="_blank">
-    <img src="https://img.shields.io/badge/Indicium_Academy-Credencial_Verificada-00C7B7?style=for-the-badge" alt="Credencial Verificada" />
-  </a>
 </p>
-
-> 📊 **Dashboard Interativo Online:** [Explorar Relatório no Power BI](https://app.powerbi.com/view?r=eyJrIjoiNjA3YzNmZGYtNmM0NC00MzI3LWFmNTItNWUzOTZhODU3OWZlIiwidCI6IjNhZGQxZmM5LWI5NzYtNGQyYy04OTNiLTI4Y2NmMjMwMjEwMyJ9) | 📜 **Certificação Oficial:** [Ver Credencial Verificada](https://mycourse.app/gCgrzWpkwELkbSkxz)
 
 ## 📌 Resumo Executivo & Contexto de Negócio
 Este repositório contém a implementação ponta a ponta de um pipeline de Engenharia de Analytics e Data Warehouse de padrão corporativo para a **Adventure Works**, uma fabricante e varejista global de bicicletas.
@@ -191,8 +184,8 @@ dbt docs serve
 
 ## 👤 Autora
 
-**Sueli da Hora Moreira** — *Analytics Engineer*  
-Projeto Final de Certificação da **Indicium AI Academy**.
+- **Sueli da Hora Moreira** — Analytics Engineer
+- Certified Analytics Engineer pela **Indicium AI Academy** (Projeto Capstone)
 
 ---
 
