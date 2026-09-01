@@ -1,9 +1,9 @@
-# Name your project! 
+# Name your project!
 name: 'adventure_works_analytics'
 version: '1.0.0'
 config-version: 2
 
-# Ajustado para conectar com o nome correto do seu arquivo profiles.yml
+# Profile configuration for dbt connection
 profile: 'adventure_works_analytics'
 
 # These configurations specify where dbt should look for different types of files.
@@ -22,8 +22,6 @@ clean-targets:
 # Configuring models
 models:
   adventure_works_analytics:
-    # Removemos as linhas "+schema" para que todas as views e tabelas 
-    # caiam direto dentro do seu schema 'dbt_adventure_works', exatamente como o do professor.
     staging:
       +materialized: view
     intermediate:
